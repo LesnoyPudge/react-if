@@ -1,0 +1,53 @@
+{
+    "name": "@lesnoypudge/react-if",
+    "license": "ISC",
+    "author": "LesnoyPudge",
+    "description": "lesnoypudge's react-if",
+    "version": "1.0.0",
+    "keywords": [
+        "lesnoypudge",
+        "react-if",
+        "babel-plugin",
+        "babel-plugin-react-if"
+    ],
+    "main": "./build/index.js",
+    "types": "./build/index.d.ts",
+    "type": "module",
+    "files": [
+        "build",
+        "types"
+    ],
+    "scripts": {
+        "publish:npm": "npm publish --access public",
+        "deploy": "git add . && git commit -m 'update' && git push && git status",
+        "build": "vite build",
+        "type:check": "tsc --noEmit -p tsconfig.node.build.json",
+        "test:check": "tsx --tsconfig ./tsconfig.node.build.json ./tests/plugin2.test.ts",
+        "prepublishOnly": "npm run scripts:generate && npm run type:check && npm run test:check && npm run build",
+        "scripts:transform-example": "tsx --tsconfig ./tsconfig.node.build.json ./scripts/transformExample.ts"
+    },
+    "dependencies": {
+        "@babel/core": "^7.27.1",
+        "@babel/generator": "^7.27.1",
+        "@babel/types": "^7.27.1",
+        "@lesnoypudge/types-utils-base": "^3.6.0",
+        "@lesnoypudge/utils": "^19.5.2"
+    },
+    "peerDependencies": {
+        "@types/react": ">=17.*.*"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.27.2",
+        "@babel/preset-react": "^7.27.1",
+        "@babel/preset-typescript": "^7.27.1",
+        "@lesnoypudge/builder": "^5.0.1",
+        "@lesnoypudge/eslint-config": "^12.0.3",
+        "@lesnoypudge/formatter-config": "^8.0.0",
+        "@lesnoypudge/types-global-base": "^4.0.0",
+        "@lesnoypudge/types-global-node": "^1.0.1",
+        "babel-plugin-tester": "^11.0.4",
+        "tsx": "^4.19.4",
+        "typescript": "^5.8.3",
+        "vite": "^6.3.4"
+    }
+}

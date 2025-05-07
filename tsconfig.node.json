@@ -1,0 +1,20 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": [
+        "./*",
+        "./src/**/*",
+        "./tests/**/*",
+        "./types/**/*",
+        "./example/**/*",
+        "./scripts/**/*",
+        "node_modules/@types",
+    ],
+    "exclude": [],
+    "compilerOptions": {
+        "jsx": "react",
+        "types": [
+            "@lesnoypudge/types-global-base",
+            "@lesnoypudge/types-global-node",
+        ]
+    }
+}
