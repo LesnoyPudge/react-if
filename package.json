@@ -23,7 +23,7 @@
         "build": "vite build",
         "type:check": "tsc --noEmit -p tsconfig.node.build.json",
         "test:check": "tsx --tsconfig ./tsconfig.node.build.json ./tests/plugin2.test.ts",
-        "prepublishOnly": "npm run scripts:generate && npm run type:check && npm run test:check && npm run build",
+        "prepublishOnly": "npm run type:check && npm run test:check && npm run build",
         "scripts:transform-example": "tsx --tsconfig ./tsconfig.node.build.json ./scripts/transformExample.ts"
     },
     "dependencies": {
